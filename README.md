@@ -3,11 +3,11 @@
 A clean, professional, interactive dashboard for retail sales analysis using Python, Pandas, Plotly, and Streamlit.
 
 ## Project Structure
-![Project Structure](images/project_structure.png)
+![Project Structure](images/folderdashboard.png)
 
 ## Dashboard Screenshots
 ### KPI Overview
-![Dashboard Overview](images/dashboard_overview.png)
+![Dashboard Overview](images/retailsalesdashboard.png)
 
 ### Interactive Charts
 ![Dashboard Tabs](images/dashboard_tabs.png)
@@ -27,3 +27,4 @@ A clean, professional, interactive dashboard for retail sales analysis using Pyt
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+
