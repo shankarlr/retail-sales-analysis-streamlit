@@ -1,4 +1,3 @@
-import streamlit as st
 import pandas as pd
 from src.data_loader import load_data
 from src.eda import calculate_kpis
