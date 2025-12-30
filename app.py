@@ -1,3 +1,4 @@
+import streamlit as st
 import pandas as pd
 from src.data_loader import load_data
 from src.eda import calculate_kpis
@@ -9,26 +10,21 @@ st.title("📊 Professional Retail Sales Analytics Dashboard")
 
 df = load_data("data/retail_sales.csv")
 
-# ---------------- Sidebar Filters ----------------
 st.sidebar.header("Filters")
 
-# Date Range
 min_date = df["date"].min()
 max_date = df["date"].max()
 start_date, end_date = st.sidebar.date_input("Select Date Range", [min_date, max_date])
 filtered_df = df[(df["date"] >= pd.to_datetime(start_date)) & (df["date"] <= pd.to_datetime(end_date))]
 
-# City Filter
 if "city" in df.columns:
     cities = st.sidebar.multiselect("Select City", df["city"].unique(), df["city"].unique())
     filtered_df = filtered_df[filtered_df["city"].isin(cities)]
 
-# Category Filter
 if "category" in df.columns:
     categories = st.sidebar.multiselect("Select Category", df["category"].unique(), df["category"].unique())
     filtered_df = filtered_df[filtered_df["category"].isin(categories)]
 
-# Subcategory Filter
 if "subcategory" in df.columns:
     subcats = st.sidebar.multiselect("Select Sub-Category", df["subcategory"].unique(), df["subcategory"].unique())
     filtered_df = filtered_df[filtered_df["subcategory"].isin(subcats)]
